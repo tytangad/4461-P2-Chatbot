@@ -1,0 +1,99 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_troubled
+  - bot_challenge
+  - pourout
+  - ask_for_advice
+  - ask_for_cheer
+  - extreme_negativity
+  - introduce_self
+  - out_of_scope
+
+entities:
+- name
+
+slots:
+  name:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: name
+
+responses:
+  utter_greet:
+    - text: “Hi. How is your day going?”
+
+  utter_greet/withname:
+    - text: "Hi, {name}! Nice to meet you:)"
+
+  utter_cheer_up:
+  - text: "Here is something to cheer you up:"
+    image: "https://i.imgur.com/nGF1K8f.jpg"
+  - text: "Here is a joke for you: hahaha"
+
+  utter_did_that_help:
+  - text: "Did that help you?"
+  - text: "Are you feeling better?"
+
+  utter_happy:
+  - text: "Great, carry on!"
+  - text: "Good to hear that!"
+  - text: "Nice :)"
+  - text: "That's awesome!!!"
+
+  utter_goodbye:
+  - text: "Bye"
+  - text: "Goodbye!"
+  - text: "have a good day"
+  - text: "see you!"
+  - text: "^-^"
+
+  utter_thanks:
+  - text: "Thank you"
+  - text: "Thanksss <3"
+
+  utter_iamabot:
+  - text: "I am a bot powered by Rasa."
+  - text: "I am not human."
+
+  utter_to_professional:
+  - text: "Here's some professional help you can try."
+  - text: "I am sensing you need more professional help."
+
+  utter_idk:
+  - text: "I am not sure i know that, is there anything else i can help you with?"
+  - text: "Sorry i don't know that."
+
+  utter_empathy:
+  - text: "I’m sorry you feel this way."
+  - text: "I’m here for you."
+  - text: "I understand your feelings."
+  - text: "thank you for trusting me with your feelings."
+  - text: "I'm sorry you are going through this."
+
+  utter_advice:
+  - text: "You should do what your heart tells you"
+  - text: "Believe in your first instinct"
+
+  utter_name:
+  - text: "Hello! What is your name?"
+
+  utter_interest:
+  - text: "Why do you think you feeling like this?"
+  - text: "How did you handled it?"
+  - text: "How would you like me to help?"
+
+  utter_interest/prompt:
+  - text: "Anything happened you would like to share?"
+
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
