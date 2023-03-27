@@ -33,7 +33,7 @@ to connect chatroom.js with the website:
 python -m http.server
 rasa run --enable-api --cors="*"
 ```
-> you can then talk with the chatbot through the chatroom in index.html 
+> you can then talk with the chatbot through the chatroom in index.html <br>
 > remember to keep the terminal running, or else the website won't work!
 
 refer to [lab 1](https://github.com/Dingdong-LIU/Lab1_Chatbot_Rasa) for other command
