@@ -13,6 +13,10 @@ if you haven't installed rasa before
 ```bash
 pip3 install rasa
 ```
+run this in a seperate terminal(also rasa env):
+```bash
+rasa run actions --port 5055
+```
 
 to train the rasa model:
 ```bash
