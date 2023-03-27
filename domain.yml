@@ -99,7 +99,7 @@ responses:
   - text: "Have some rest first! So you can clear your mind for a sensible decision."
   - text: "It would be useful to take your mind off for a bit before you decide."
   - text: "Try thinking from another perspective!"
-  - text: “I know this won't be easy, but I trust that you've got what it takes to get through it.”
+  - text: "I know this won't be easy, but I trust that you've got what it takes to get through it."
   - text: "You should do what your heart tells you."
 
   utter_name:
