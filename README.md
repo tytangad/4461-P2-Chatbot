@@ -1,8 +1,17 @@
 # 4461-P2-Chatbot
 
+to create virtual env via condo:
+```bash
+conda create -n rasa_env python=3.9
+```
+
 to activate rasa environment:
 ```bash
 conda activate rasa_env  
+```
+if you haven't installed rasa before
+```bash
+pip3 install rasa
 ```
 
 to train the rasa model:
@@ -15,7 +24,7 @@ to run the rasa chatbot:
 rasa shell
 ```
 
-to connect the chatbot with the website:
+to connect chatroom.js with the website:
 ```bash
 python -m http.server
 rasa run --enable-api --cors="*"
