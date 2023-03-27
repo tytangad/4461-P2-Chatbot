@@ -173,6 +173,7 @@ nlu:
     - [Tony](name)
     - [Tracy](name) is my name
     - it's [Tom](name)
+    - Call me [Steve](name)
 
 - lookup: name
   examples: |
