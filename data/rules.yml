@@ -21,8 +21,3 @@ rules:
   steps:
   - intent: out_of_scope
   - action: utter_idk
-
-- rule: answer user's name
-  steps:
-  - intent: quiz_name
-  - action: NameQuiz
