@@ -1,0 +1,193 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - sup
+    - what's up
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+
+- intent: goodbye
+  examples: |
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+    - 88
+    - i am going to sleep now
+
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+    - ys
+    - yea
+    - yup
+    - thanks
+    - thank you
+    - sure
+    - haha
+    - hahaha
+    - lol
+    - hahahhaah
+    - hehe
+    - so funny
+    - this is so funny
+
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+    - nah
+    - idk
+    - i dont know
+    - i didnt
+
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+    - who are you?
+    - how are you feeling?
+    - what is your name?
+    - Why don't you understand?
+
+- intent: mood_great
+  examples: |
+    - perfect
+    - great
+    - amazing
+    - feeling like a king
+    - wonderful
+    - legend
+    - I am feeling very good
+    - I am great
+    - I am amazing
+    - I am going to save the world
+    - super stoked
+    - extremely good
+    - so so good
+    - i feel better
+    - i am feeling better
+
+- intent: mood_troubled
+  examples: |
+    - my day was horrible
+    - I am sad
+    - I don't feel very well
+    - I am disappointed
+    - super sad
+    - I'm so sad
+    - sad
+    - very sad
+    - unhappy
+    - not good
+    - not very good
+    - extremly sad
+    - so saad
+    - so sad
+    - i am so stressed
+    - anxious
+    - depressed
+    - nervous
+    - i feel so bad
+    - i wanna cry
+    - i feel so behind  
+    - i feel so left behind  
+    - struggling
+
+- intent: pourout
+  examples: |
+    - something happened today
+    - you know what
+    - so much work to do
+    - I am so busy
+    - this is so hard
+    - too much
+    - I am unclear about my future path
+    - everyone else has job offer but me
+    - i dont have enough work experience
+    - i want to make up with her 
+    - my friend break up with me
+
+
+- intent: ask_for_advice
+  examples: |
+    - what should i do?
+    - what do you think?
+    - should i do it?
+    - is this ok?
+    - i dont know what to do
+
+- intent: ask_for_cheer
+  examples: |
+   - can you cheer me up?
+   - cheer me up
+   - help me
+   - make me feel better
+   - make me happy
+   - can you send me more?
+   - send me more
+   - how
+   - send me more cute pictures! 
+
+- intent: extreme_negativity
+  examples: |
+    - i want to die
+    - i wanna die
+    - i don't want to live 
+
+- intent: introduce_self
+  examples: |
+    - My name is [Cherry](name)
+    - I am [Crystal](name)
+    - [Tony](name)
+    - [Tracy](name) is my name
+    - it's [Tom](name)
+
+- lookup: name
+  examples: |
+    - Cherry
+    - Steve
+    - Crystal
+    - Tony
+    - Tracy
+    - Tom
+    - Elizabeth
+    - James
+    - Michelle
+    - Richard
+
+- intent: out_of_scope
+  examples: |
+    - what is the weather
+    - what is the time

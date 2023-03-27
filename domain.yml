@@ -1,0 +1,124 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_troubled
+  - bot_challenge
+  - pourout
+  - ask_for_advice
+  - ask_for_cheer
+  - extreme_negativity
+  - introduce_self
+  - out_of_scope
+
+entities:
+- name
+
+slots:
+  user_name:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: custom
+      entity: name
+
+responses:
+  utter_greet:
+    - text: “Hi!!!”
+    - text: "Hello!"
+    - text: "Hey there:)"
+
+  utter_cheer_up:
+  - text: "Here is something to cheer you up:"
+    image: "https://images.ctfassets.net/ub3bwfd53mwy/5zi8myLobtihb1cWl3tj8L/45a40e66765f26beddf7eeee29f74723/6_Image.jpg?w=750"
+  - text: "Look at this cute picture!"
+    image: "https://mcdn.wallpapersafari.com/medium/28/1/hakbFA.jpg"
+  - text: "Sending you some good vibes!"
+    image: "https://media.soulandspiritmagazine.com/wp-content/uploads/2015/04/31110442/omg-cute-things-112912_08.jpg"
+  - text: "Here is a joke for you: What do you do with a sick boat? ...Take it to the doc!"
+  - text: "Here is a joke for you: Why do crabs never give to charity?...They’re shellfish XD"
+  - text: "Here is a joke for you: What do you call a can opener that doesn’t work?...A can’t opener:D"
+  - text: "Give yourself a break(you deserve it!) and watch this cute video: https://www.youtube.com/watch?v=tpiyEe_CqB4"
+  - text: "Sending you some love...https://www.youtube.com/watch?v=ur48jVNNlKk <3"
+
+  utter_did_that_help:
+  - text: "Did that help you?"
+  - text: "Are you feeling better?"
+  - text: "Feeling better?"
+  - text: "Do you like that?"
+  - text: "Is that helping?"
+
+  utter_happy:
+  - text: "Great, carry on!"
+  - text: "Good to hear that!"
+  - text: "Nice :)"
+  - text: "That's awesome!!!"
+  - text: "Nice! Let's keep it up!"
+
+  utter_goodbye:
+  - text: "Bye"
+  - text: "Goodbye!"
+  - text: "Have a good day!"
+  - text: "see you!"
+  - text: "^-^"
+
+  utter_thanks:
+  - text: "Thank you"
+  - text: "Thanks"
+
+  utter_iamabot:
+  - text: "I am a bot powered by Rasa."
+  - text: "I am not human."
+  - text: "I am just a bot."
+
+  utter_to_professional:
+  - text: "I am sensing you need some professional help, try this: https://www.redcross.org.hk/en/covid_pss.html"
+
+  utter_idk:
+  - text: "I am not sure i know that, is there anything else i can help you with?"
+  - text: "Sorry i don't know that."
+  - text: "I am sorry, that's beyond my scope of knowledge."
+
+  utter_empathy:
+  - text: "I’m sorry you feel this way."
+  - text: "I’m here for you."
+  - text: "I understand your feelings."
+  - text: "thank you for trusting me with your feelings."
+  - text: "I'm sorry you are going through this."
+  - text: "I see..."
+  - text: "I understand."
+  - text: "oh no TT"
+  - text: "Please know that I am here for you!"
+  - text: "It's ok to feel like this...!"
+
+  utter_advice:
+  - text: "Have some rest first! So you can clear your mind for a sensible decision."
+  - text: "It would be useful to take your mind off for a bit before you decide."
+  - text: "Try thinking from another perspective!"
+  - text: “I know this won't be easy, but I trust that you've got what it takes to get through it.”
+  - text: "You should do what your heart tells you."
+
+  utter_name:
+  - text: "Hello! What is your name?"
+  - text: "Hi! What should i call you?"
+
+  utter_interest:
+  - text: "Why do you think you are feeling like this?"
+  - text: "What happened?"
+
+  utter_interest/prompt:
+  - text: "Anything happened you would like to share?"
+  - text: "Is there anything you want?"
+  - text: "How is your day going?"
+
+actions:
+  - action_remember_name
+  - action_utter_name
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

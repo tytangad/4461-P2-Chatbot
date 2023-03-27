@@ -1,0 +1,68 @@
+version: "3.1"
+
+stories:
+
+- story: greeting
+  steps:
+  - intent: greet
+  - action: utter_name
+  - intent: introduce_self
+  - action: action_remember_name
+  - action: action_utter_name
+  - action: utter_interest/prompt
+
+- story: pourout 1
+  steps:
+  - or: 
+    - intent: pourout
+    - intent: mood_troubled
+  - action: utter_empathy
+  - intent: mood_troubled
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_thanks
+
+- story: pourout 2
+  steps:
+  - or: 
+    - intent: pourout
+    - intent: mood_troubled
+  - action: utter_empathy
+  - intent: pourout
+  - action: utter_empathy
+  - intent: ask_for_cheer
+  - action: utter_cheer_up
+  - intent: mood_troubled
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_empathy
+
+- story: pourout 3
+  steps:
+  - or: 
+    - intent: pourout
+    - intent: mood_troubled
+  - action: utter_empathy
+  - intent: mood_troubled
+  - action: utter_interest
+  - intent: pourout
+  - action: utter_empathy
+  - intent: ask_for_cheer
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_interest
+
+- story: advice
+  steps:
+  - intent: ask_for_advice
+  - action: utter_advice
+  - intent: pourout
+  - action: utter_empathy
+
+- story: happy path
+  steps:
+  - intent: mood_great
+  - action: utter_happy
