@@ -165,28 +165,14 @@ nlu:
     - i want to die
     - i wanna die
     - i don't want to live 
+    - what's the point of living
 
-- intent: introduce_self
-  examples: |
-    - My name is [Cherry](name)
-    - I am [Crystal](name)
-    - [Tony](name)
-    - [Tracy](name) is my name
-    - it's [Tom](name)
-    - Call me [Steve](name)
 
-- lookup: name
+- intent: self_worth
   examples: |
-    - Cherry
-    - Steve
-    - Crystal
-    - Tony
-    - Tracy
-    - Tom
-    - Elizabeth
-    - James
-    - Michelle
-    - Richard
+    - i feel worthless
+    - i'm so useless
+    - nothing i do matters
 
 - intent: out_of_scope
   examples: |

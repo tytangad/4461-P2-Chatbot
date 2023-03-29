@@ -2,14 +2,18 @@ version: "3.1"
 
 stories:
 
-- story: greeting
+- story: greeting new user
   steps:
   - intent: greet
-  - action: utter_name
-  - intent: introduce_self
-  - action: action_remember_name
-  - action: action_utter_name
-  - action: utter_interest/prompt
+  - action: utter_ask_name
+  - action: name_form
+  - action: utter_remembered_name
+  
+
+- story: self worth
+  steps:
+  - intent: self_worth
+  - action: utter_worth
 
 - story: pourout 1
   steps:

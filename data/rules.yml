@@ -21,3 +21,11 @@ rules:
   steps:
   - intent: out_of_scope
   - action: utter_idk
+
+- rule: only utter name if given
+  condition: 
+  - slot_was_set: 
+    - name
+  steps:
+  - intent: greet
+  - action: utter_remembered_name
