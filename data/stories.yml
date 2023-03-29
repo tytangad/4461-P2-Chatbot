@@ -5,7 +5,6 @@ stories:
 - story: greeting new user
   steps:
   - intent: greet
-  - action: utter_ask_name
   - action: name_form
   - action: utter_remembered_name
   
