@@ -13,18 +13,18 @@ intents:
   - ask_for_cheer
   - extreme_negativity
   - introduce_self
+  - self_worth
   - out_of_scope
 
-entities:
-- name
-
 slots:
-  user_name:
+  name:
     type: text
     influence_conversation: true
     mappings:
-    - type: custom
-      entity: name
+    - type: from_text
+      conditions:
+      - active_loop: name_form
+        requested_slot: name
 
 responses:
   utter_greet:
@@ -63,7 +63,7 @@ responses:
   - text: "Bye"
   - text: "Goodbye!"
   - text: "Have a good day!"
-  - text: "see you!"
+  - text: "See you!"
   - text: "^-^"
 
   utter_thanks:
@@ -80,14 +80,14 @@ responses:
 
   utter_idk:
   - text: "I am not sure i know that, is there anything else i can help you with?"
-  - text: "Sorry i don't know that."
+  - text: "Sorry I don't know that."
   - text: "I am sorry, that's beyond my scope of knowledge."
 
   utter_empathy:
   - text: "I’m sorry you feel this way."
   - text: "I’m here for you."
   - text: "I understand your feelings."
-  - text: "thank you for trusting me with your feelings."
+  - text: "Thank you for trusting me with your feelings."
   - text: "I'm sorry you are going through this."
   - text: "I see..."
   - text: "I understand."
@@ -102,9 +102,13 @@ responses:
   - text: "I know this won't be easy, but I trust that you've got what it takes to get through it."
   - text: "You should do what your heart tells you."
 
-  utter_name:
+  utter_ask_name:
   - text: "Hello! What is your name?"
-  - text: "Hi! What should i call you?"
+  - text: "Hi! What should I call you?"
+
+  utter_remembered_name:
+  - text: "Hey {name}! How are you feeling today?"
+  - text: "Hi {name}, how are you?"
 
   utter_interest:
   - text: "Why do you think you are feeling like this?"
@@ -115,9 +119,23 @@ responses:
   - text: "Is there anything you want?"
   - text: "How is your day going?"
 
+  utter_worth:
+  - text: "Your life means much more than you know, {name}"
+  - text: "You are not what you’ve done. You are what you keep doing."
+  - text: "Sometimes you win, sometimes you learn."
+
 actions:
   - action_remember_name
   - action_utter_name
+  - utter_remembered_name
+  - utter_interest/prompt
+  - utter_worth
+
+
+forms:
+  name_form:
+    required_slots:
+    - name
 
 session_config:
   session_expiration_time: 60

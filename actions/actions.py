@@ -31,7 +31,6 @@ from typing import Any, Text, Dict, List
 from rasa_sdk import Action, Tracker
 from rasa_sdk.events import SlotSet
 from rasa_sdk.executor import CollectingDispatcher
-
 class ActionRememberName(Action):
 
     def name(self) -> Text:
@@ -41,7 +40,6 @@ class ActionRememberName(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         current_name = next(tracker.get_latest_entity_values("name"), None)
-        
         return [SlotSet("user_name", current_name)]
 
 class UtterName(Action):
@@ -52,7 +50,7 @@ class UtterName(Action):
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-
+        
         user_name = tracker.get_slot("user_name")
         msg = f"Hi, {user_name}! Nice to meet you:)"
         if (user_name == None):
